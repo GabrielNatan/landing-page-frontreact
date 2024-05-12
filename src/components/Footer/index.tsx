@@ -1,33 +1,37 @@
 import { FacebookLogo, InstagramLogo, TwitterLogo, YoutubeLogo } from "phosphor-react"
 import { Button } from "../Button"
 import logo from "/src/assets/logo.png"
+import { useTranslation } from "react-i18next"
+
 export const Footer = ()=>{
+  const { t } = useTranslation()
+
   return(
     <div className="container flex justify-center  flex-col lg:flex-row relative lg:h-96 px-5 pt-5">
       <form className="container text-slate-50 lg:-top-14  lg:absolute w-full p-10 bg-violet-950 rounded-3xl flex gap-10 items-center flex-col lg:flex-row">
 
         <div className="flex-1">
-          <h3 className="text-3xl  font-bold">Não Perca nada!</h3>
-          <p className="text-xl">Cadastre sue email agora e tenha noticias de ultima hora.</p>
+          <h3 className="text-3xl  font-bold">{t('newsletter.title')}</h3>
+          <p className="text-xl">{t('newsletter.subtitle')}</p>
         </div>
         
         <div >
           <div className="flex gap-3 lg:items-end flex-col lg:flex-row">
             <div className="flex flex-col ">
-              <label className="text-sm" htmlFor="name">Nome</label>
+              <label className="text-sm" htmlFor="name">{t('newsletter.form.labelOne')}</label>
               <input className="p-2 rounded-md my-2 max-w-96" id="name" type="text"/>
             </div>
             <div className="flex flex-col">
-              <label className="text-sm" htmlFor="email">Email</label>
+              <label className="text-sm" htmlFor="email">{t('newsletter.form.labelTwo')}</label>
               <input className="p-2 rounded-md my-2 max-w-96" id="email" type="email"/>
             </div>
             <div className="mb-2">
-              <Button type="submit" >Inscreva-se</Button>
+              <Button type="submit" >{t('newsletter.form.button')}</Button>
             </div>
           </div>
           <div > 
             <input id="checkbox" type="checkbox"/>
-            <label htmlFor="checkbox" className="max-w-96"> Seu email aqui vai blablablabla vai blablablabla vai blablablabla vai blablablabla </label>
+            <label htmlFor="checkbox" className="max-w-96"> {t('newsletter.form.checkbox')}</label>
           </div>
         </div>
         
@@ -42,27 +46,25 @@ export const Footer = ()=>{
             </div>
           </div>
           <p>
-            Amet minim mollit non deserunt
-            ullamco est sit aliqua dolor do amet
-            sintelit officia consequat
+          {t('footer.one')}
           </p>
         </div>
         <ol>
-          <li className="font-bold">Heading</li>
-          <li>Link 1</li>
-          <li>Link 2</li>
-          <li>Link 3</li>
-          <li>Link 4</li>
+          <li className="font-bold">{t('footer.two.title')}</li>
+          <li>{t('footer.two.linkOne')}</li>
+          <li>{t('footer.two.linkTwo')}</li>
+          <li>{t('footer.two.linkThree')}</li>
+          <li>{t('footer.two.linkFour')}</li>
         </ol>
         <ol>
-          <li className="font-bold">Heading</li>
-          <li>Link 1</li>
-          <li>Link 2</li>
-          <li>Link 3</li>
-          <li>Link 4</li>
+          <li className="font-bold">{t('footer.three.title')}</li>
+          <li>{t('footer.three.linkOne')}</li>
+          <li>{t('footer.three.linkTwo')}</li>
+          <li>{t('footer.three.linkThree')}</li>
+          <li>{t('footer.three.linkFour')}</li>
         </ol>
         <div className="flex flex-col gap-3">
-          <strong>Connect with us</strong>
+          <strong>{t('footer.four')}</strong>
           <div className="flex gap-3">
             <YoutubeLogo size={32} />
             <FacebookLogo size={32} />

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import Amazon from "/src/assets/Company=Amazon.png"
 import Dropbox from "/src/assets/Company=Dropbox.png"
 import Netflix from "/src/assets/Company=Netflix.png"
@@ -8,11 +9,14 @@ import Tesla from "/src/assets/Company=Tesla.png"
 import YouTube from "/src/assets/Company=YouTube.png"
 
 export const Partners = ()=>{
+
+  const { t } = useTranslation()
+
   return(
     <section className="w-full flex justify-center py-10 lg:py-28 bg-slate-100">
     <div className="container flex flex-col gap-10 overflow-auto">
 
-      <h2 className="text-4xl font-extrabold text-center sticky lg:relative left-0">Our Partners</h2>
+      <h2 className="text-4xl font-extrabold text-center sticky lg:relative left-0">{t('partners.title')}</h2>
       <div className=" flex w-[300vh] px-5   lg:w-full lg:grid lg:grid-rows-2 lg:grid-cols-4 gap-5">
         <div className="flex items-center justify-center w-full border rounded-lg p-5 bg-white">
           <img src={Amazon} className="max-w-40 w-full" />

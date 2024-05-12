@@ -1,16 +1,15 @@
 import { CheckCircle } from "phosphor-react"
 import { Button } from "../Button"
+import { useTranslation } from "react-i18next"
 
 export const Clients = ()=>{
+  const { t } = useTranslation()
   return(
     <section className="lg:h-screen w-full flex flex-col items-center p-10 px-5 lg:pt-32 bg-slate-100">
     <div className="container text-center mb-5" >
-      <h2 className="text-2xl lg:text-5xl font-extrabold max-w-xl mx-auto mb-5">Why our clients trust us</h2>
+      <h2 className="text-2xl lg:text-5xl font-extrabold max-w-xl mx-auto mb-5">{t('clients.title')}</h2>
       <p  className="text-sm lg:text-md  lg:max-w-5xl mx-auto">
-        Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed. 
-        Suspendisse lobortis vitae quis vehicula pellentesque sit id. Urna posuere 
-        consequat velit vulputate faucibus pretium arcu accumsan sit. Vel venenatis 
-        sapien.
+      {t('clients.subtitle')}
       </p>
     </div>
 
@@ -24,21 +23,21 @@ export const Clients = ()=>{
       <ol className="px-3 flex-1 h-full flex flex-col justify-center  lg:items-start">
         <li className="py-3 text-xl max-w-lg flex gap-1">
           <CheckCircle size={28} weight="fill"  className="fill-emerald-500 mt-[2px]"/>
-          Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.
+          {t('clients.list.one')}
         </li>
         <li className="py-3 text-xl max-w-lg flex gap-1">
           <CheckCircle size={28} weight="fill"  className="fill-emerald-500 mt-[2px]"/>
-          Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.
+          {t('clients.list.two')}
         </li>
         <li className="py-3 text-xl max-w-lg flex gap-1">
           <CheckCircle size={28} weight="fill"  className="fill-emerald-500 mt-[2px]"/>
-          Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.
+          {t('clients.list.three')}
         </li>
         <li className="py-3 text-xl max-w-lg flex gap-1 mb-10">
           <CheckCircle size={28} weight="fill"  className="fill-emerald-500 mt-[2px]"/>
-          Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.
+          {t('clients.list.four')}
         </li>
-        <Button>Ver mais</Button>
+        <Button>{t('clients.list.button')}</Button>
       </ol>
 
     </div>

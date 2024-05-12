@@ -1,28 +1,33 @@
+import { useTranslation } from "react-i18next"
+
 export const Numbers = ()=>{
+
+  const { t } = useTranslation()
+
   return(
     <section className="p-10 lg:p-40">
 
     <div className="container flex flex-col text-center">
-      <h2 className=" text-xl font-extrabold lg:text-4xl max-w-2xl mb-5 text-center m-auto">Our business strategy has helped many businesses across the globe</h2>
-      <p className="text-sm lg:text-lg">Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed. Suspendisse lobortis vitae quis vehicula pellentesque sit id</p>
+      <h2 className=" text-xl font-extrabold lg:text-4xl max-w-2xl mb-5 text-center m-auto">{t('numbers.title')}</h2>
+      <p className="text-sm lg:text-lg">{t('numbers.subtitle')}</p>
       <div className="w-full flex lg:gap-5 my-2 lg:my-10 flex-col lg:flex-row">
         <div className="flex flex-1  border-b lg:border-b-0 lg:border-r  py-5 lg:pb-0 lg:my-10 flex-col">
-          <strong>Clientes</strong>
+          <strong>{t('numbers.one')}</strong>
           <span className="text-3xl">12K</span>
         </div>
 
         <div className="flex flex-1  border-b lg:border-b-0 lg:border-r  py-5 lg:pb-0 lg:my-10 flex-col">
-          <strong>Annual growth</strong>
+          <strong>{t('numbers.two')}</strong>
           <span className="text-3xl">55%</span>
         </div>
 
         <div className="flex flex-1  border-b lg:border-b-0 lg:border-r  py-5 lg:pb-0 lg:my-10 flex-col">
-          <strong>No of projects</strong>
+          <strong>{t('numbers.three')}</strong>
           <span className="text-3xl">5K</span>
         </div>
 
         <div className="flex flex-1  py-5 lg:pb-0 lg:my-10 flex-col">
-          <strong>Positive ratings</strong>
+          <strong>{t('numbers.four')}</strong>
           <span className="text-3xl">80%</span>
         </div>
       </div>

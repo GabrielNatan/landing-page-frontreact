@@ -1,6 +1,10 @@
 import { Plus } from "phosphor-react"
+import { useTranslation } from "react-i18next"
 
 export const Questions = ()=>{
+
+  const { t } = useTranslation()
+
   return(
    
     <section className="w-full py-10 lg:pb-40 px-5 flex justify-center">
@@ -13,65 +17,53 @@ export const Questions = ()=>{
 
       <div className="flex-1">
 
-        <h2 className="text-4xl font-extrabold mb-5">Frequently asked questions</h2>
+        <h2 className="text-4xl font-extrabold mb-5">{t('questions.title')}</h2>
 
         <ol className="flex flex-col gap-5">
           <li className="flex flex-col border rounded-lg">
             <div className="flex justify-between px-5 py-4">
-              <strong>Lorem ipsum dolar sit amet consectetur</strong>
+              <strong>{t('questions.one.title')}</strong>
               <Plus size={20}/>
             </div>
             <div className="hidden h-0">
               <p  className="px-5 py-2">
-                Lorem ipsum dolor sit amet consectetur. 
-                Pulvinar arcu mattis in at sodales condimentum. 
-                Gravida arcu aliquet rutrum erat varius. 
-                Tellus felis sed pretium in egestas. 
+                {t('questions.one.description')}
               </p>
             </div>
           </li>
 
           <li className="flex flex-col border rounded-lg">
             <div className="flex justify-between px-5 py-4">
-              <strong>Lorem ipsum dolar sit amet consectetur</strong>
+              <strong>{t('questions.two.title')}</strong>
               <Plus size={20}/>
             </div>
             <div className="hidden h-0">
               <p  className="px-5 py-2">
-                Lorem ipsum dolor sit amet consectetur. 
-                Pulvinar arcu mattis in at sodales condimentum. 
-                Gravida arcu aliquet rutrum erat varius. 
-                Tellus felis sed pretium in egestas. 
+                {t('questions.two.description')}
               </p>
             </div>
           </li>
 
           <li className="flex flex-col border rounded-lg">
             <div className="flex justify-between px-5 py-4">
-              <strong>Lorem ipsum dolar sit amet consectetur</strong>
+              <strong>{t('questions.three.title')}</strong>
               <Plus size={20}/>
             </div>
             <div className="hidden h-0">
               <p  className="px-5 py-2">
-                Lorem ipsum dolor sit amet consectetur. 
-                Pulvinar arcu mattis in at sodales condimentum. 
-                Gravida arcu aliquet rutrum erat varius. 
-                Tellus felis sed pretium in egestas. 
+                {t('questions.three.description')}
               </p>
             </div>
           </li>
 
           <li className="flex flex-col border rounded-lg">
             <div className="flex justify-between px-5 py-4">
-              <strong>Lorem ipsum dolar sit amet consectetur</strong>
+              <strong>{t('questions.four.title')}</strong>
               <Plus size={20}/>
             </div>
             <div className="hidden h-0">
               <p  className="px-5 py-2">
-                Lorem ipsum dolor sit amet consectetur. 
-                Pulvinar arcu mattis in at sodales condimentum. 
-                Gravida arcu aliquet rutrum erat varius. 
-                Tellus felis sed pretium in egestas. 
+                {t('questions.four.description')}
               </p>
             </div>
           </li>

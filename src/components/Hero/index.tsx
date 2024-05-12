@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next"
 import { Button } from "../Button"
 
 export const Hero = ()=>{
+  const { t } = useTranslation()
+
   return(
     <section className="container flex h-full min-h-[80vh] flex-col lg:flex-row items-center p-5">
       <div className="flex-1 flex flex-col justify-center lg:items-start items-center text-center lg:text-start mb-10 lg:m-0">
-        <h1 className="text-5xl lg:text-7xl font-extrabold w-2/3 mb-4">Great design is invisible</h1>
-        <h2 className="mb-4 text-xl">Lorem ipsum dolar sit amet constreteur</h2>
-        <Button>Ver mais</Button>
+        <h1 className="text-5xl lg:text-7xl font-extrabold w-2/3 mb-4">{t('hero.title')}</h1>
+        <h2 className="mb-4 text-xl">{t('hero.subtitle')}</h2>
+        <Button>{t('hero.button')}</Button>
       </div>
       <div className="flex-1 bg-slate-200/50 rounded-3xl flex items-center justify-center p-5 lg:p-10 h-min">
         <img 
