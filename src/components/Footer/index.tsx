@@ -1,6 +1,6 @@
 import { FacebookLogo, InstagramLogo, TwitterLogo, YoutubeLogo } from "phosphor-react"
 import { Button } from "../Button"
-
+import logo from "/src/assets/logo.png"
 export const Footer = ()=>{
   return(
     <div className="container flex justify-center  flex-col lg:flex-row relative lg:h-96 px-5 pt-5">
@@ -37,7 +37,7 @@ export const Footer = ()=>{
         <div>
           <div>
             <div className="flex items-center">
-              <img src="/src/assets/logo.png" className="w-16"/>
+              <img src={logo} className="w-16"/>
               <h1 className="text-xl font-extrabold text-purple-500">Front<span className="text-amber-500">React</span></h1>
             </div>
           </div>
