@@ -23,6 +23,7 @@ const languages = [
   },
 ]
 
+type Languages = typeof languages[0]
 
 export const ButtonPopper = ()=>{
   const { i18n } = useTranslation()
@@ -32,21 +33,18 @@ export const ButtonPopper = ()=>{
   const button = useRef(null);
   const tooltip = useRef(null);
   
-  const handleClickClose = (e:MouseEvent)=>{
+  const handleClickClose = ()=>{
     setOpen(false)
 
   }
 
-  const handleClickNon =(e)=>{
-    e.stopPropagation()
-  }
-  const handleSelectLanguage = (selected)=>{
+
+  const handleSelectLanguage = (selected:Languages)=>{
     setFlag(selected.flag)
     i18n.changeLanguage(selected.tag)
   }
 
-  const handleClickI18n = (e)=>{
-    console.log(button.current.getBoundingClientRect()) 
+  const handleClickI18n = ()=>{
     setOpen(true)
   }
 
