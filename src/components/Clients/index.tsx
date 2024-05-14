@@ -41,7 +41,6 @@ export const Clients = ()=>{
       y:0,
       opacity:1,
       stagger:0.3,
-      delay:1
     })
 
     tl.fromTo('#list-clients > *',{

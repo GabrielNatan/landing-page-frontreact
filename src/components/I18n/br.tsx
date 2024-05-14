@@ -1,5 +1,5 @@
-const BrFlag = (props) => (
-  <svg className="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" {...props}>
+const BrFlag = () => (
+  <svg className="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
     <g strokeWidth="1pt">
       <path fill="#229e45" fillRule="evenodd" d="M0 0h640v480H0z" />
       <path
