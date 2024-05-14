@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer"
 export const App =()=>{
   return(
     <div>
-      <header className="h-16 lg:h-28 w-full flex items-center justify-center border-b fixed top-0 left-0 bg-white">
+      <header className="h-16 lg:h-28 w-full flex items-center justify-center border-b fixed top-0 left-0 bg-white z-20">
         <Navbar/>
       </header>
       <main className="w-full min-h-screen flex items-center justify-center pt-36 flex-col">

@@ -2,13 +2,39 @@ import { useTranslation } from "react-i18next"
 import { Button } from "../Button"
 import logo from "/src/assets/logo.png"
 import { ButtonPopper } from "../I18n"
+import { useRef } from "react"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(useGSAP,ScrollTrigger)
 
 export const Navbar = ()=>{
   const { t } = useTranslation()
+  
+  const container = useRef(null)
+
+  useGSAP(()=>{
+    if(!container.current)return;
+
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger: container.current,
+        start:'top +=500'
+      }
+    })
+    const from = { y:-30, opacity:0 }
+    const to = { y:0, opacity:1, stagger:0.3, duration:0.6 }
+    
+    tl.fromTo( '#nav_logo > *', from, to )
+    tl.fromTo( 'nav > *', from, {...to,delay:0.5,duration:0.3} )
+    tl.fromTo( '#nav_btn', from, to )
+
+  }, {scope:container})
 
   return(
-    <div className="flex-1 container flex items-center justify-center lg:justify-between">
-      <div className="flex items-center">
+    <div ref={container} className="flex-1 container flex items-center justify-center lg:justify-between bg-white">
+      <div id="nav_logo" className="flex items-center">
         <img src={logo} className="w-14"/>
         <h1 className="text-xl font-extrabold text-purple-500">Front<span className="text-amber-500">React</span></h1>
       </div>
@@ -17,10 +43,10 @@ export const Navbar = ()=>{
           <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"  href="#">{t('navbar.one')}</a>
           <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"href="#">{t('navbar.two')}</a>
           <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"href="#">{t('navbar.three')}</a>
-          <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"href="#">{t('navbar.four')}</a>
+          <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium mr-5"href="#">{t('navbar.four')}</a>
           <ButtonPopper/>
         </nav>
-        <Button>{t('navbar.button')}</Button>
+        <Button id="nav_btn">{t('navbar.button')}</Button>
       </div>
     </div>  
   )

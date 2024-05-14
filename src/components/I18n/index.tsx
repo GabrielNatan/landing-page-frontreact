@@ -27,12 +27,14 @@ const languages = [
 export const ButtonPopper = ()=>{
   const { i18n } = useTranslation()
   const [flag, setFlag] = useState(<BrFlag/>)
+  const [open, setOpen] = useState(false)
 
   const button = useRef(null);
   const tooltip = useRef(null);
   
   const handleClickClose = (e:MouseEvent)=>{
-    console.log('close')
+    setOpen(false)
+
   }
 
   const handleClickNon =(e)=>{
@@ -43,17 +45,22 @@ export const ButtonPopper = ()=>{
     i18n.changeLanguage(selected.tag)
   }
 
+  const handleClickI18n = (e)=>{
+    console.log(button.current.getBoundingClientRect()) 
+    setOpen(true)
+  }
+
   return(
     <>
-      <button ref={button}>{flag}</button>
-      {createPortal(
+      <button onClick={handleClickI18n} ref={button}>{flag}</button>
+      {open && createPortal(
           <div 
             ref={tooltip}
-            className='fixed p-5 z-50 w-screen h-screen bg-purple-900/25 top-0 left-0'
+            className='fixed  z-50 w-screen h-screen top-0 left-0'
             onClick={handleClickClose}
           >
-            <div onClick={handleClickNon} className='overflow-hidden h-40 rounded-lg max-w-72'>
-              <ol className='bg-slate-50 p-5 rounded-lg max-w-72'>
+            <div onClick={handleClickClose} className={`overflow-hidden rounded-lg max-w-72 translate-y-[86.5px] translate-x-[1240px]`}>
+              <ol className='bg-white p-5 border rounded-lg max-w-72'>
                 {
                   languages.map(el=>{
                     return(
@@ -68,7 +75,7 @@ export const ButtonPopper = ()=>{
             </div>
           </div>
         , 
-        document.body
+        document.body,
         )
       }
     </>

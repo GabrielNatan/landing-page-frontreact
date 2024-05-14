@@ -1,14 +1,49 @@
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
 import { Plus } from "phosphor-react"
+import { useRef } from "react"
 import { useTranslation } from "react-i18next"
+
+gsap.registerPlugin(useGSAP,ScrollTrigger)
 
 export const Questions = ()=>{
 
   const { t } = useTranslation()
+  const container = useRef<HTMLDivElement | null>(null)
+
+  useGSAP(()=>{
+    if(!container.current)return;
+    const element = container.current
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger: container.current,
+        start:'top +=500'
+      }
+    })
+
+    tl.fromTo(  
+      element.children,
+      {
+        y:30,
+        opacity:0
+      },
+      {
+        y:0,
+        opacity:1,
+        stagger:0.3,
+        duration:0.7,
+      }
+    )
+
+  },{scope:container})
+
+
 
   return(
    
     <section className="w-full py-10 lg:pb-40 px-5 flex justify-center">
-    <div className="container w-full flex gap-5  flex-col lg:flex-row">
+    <div ref={container} className="container w-full flex gap-5  flex-col lg:flex-row">
 
       <img 
         src="https://plus.unsplash.com/premium_photo-1661281213530-eb396b7f6dee?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 

@@ -1,13 +1,47 @@
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
+import { useRef } from "react"
 import { useTranslation } from "react-i18next"
+
+gsap.registerPlugin(useGSAP,ScrollTrigger)
 
 export const Numbers = ()=>{
 
   const { t } = useTranslation()
 
+  const container = useRef<HTMLDivElement | null>(null)
+
+  useGSAP(()=>{
+    if(!container.current)return;
+    const element = container.current
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger: container.current,
+        start:'top +=500'
+      }
+    })
+
+    tl.fromTo(
+      element.children,
+      {
+        x:-30,
+        opacity:0
+      },
+      {
+        x:0,
+        opacity:1,
+        stagger:0.3,
+        duration:0.7,
+      }
+    )
+
+  },{scope:container})
+
   return(
     <section className="p-10 lg:p-40">
 
-    <div className="container flex flex-col text-center">
+    <div ref={container}  className="container flex flex-col text-center">
       <h2 className=" text-xl font-extrabold lg:text-4xl max-w-2xl mb-5 text-center m-auto">{t('numbers.title')}</h2>
       <p className="text-sm lg:text-lg">{t('numbers.subtitle')}</p>
       <div className="w-full flex lg:gap-5 my-2 lg:my-10 flex-col lg:flex-row">
