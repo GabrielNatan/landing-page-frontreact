@@ -42,8 +42,7 @@ export const Navbar = ()=>{
         <nav className="flex flex-col lg:flex-row mb-5 lg:m-0 lg:mr-6 lg:items-center">
           <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"  href="#">{t('navbar.one')}</a>
           <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"href="#">{t('navbar.two')}</a>
-          <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium"href="#">{t('navbar.three')}</a>
-          <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium mr-5"href="#">{t('navbar.four')}</a>
+          <a className="py-2 px-5 rounded-md text-purple-500 hover:bg-purple-300/15 font-medium mr-5"href="#">{t('navbar.three')}</a>
           <ButtonPopper/>
         </nav>
         <Button id="nav_btn">{t('navbar.button')}</Button>

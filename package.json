@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@popperjs/core": "^2.11.8",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "gsap": "^3.12.5",
     "i18next": "^23.11.4",
     "i18next-browser-languagedetector": "^7.2.1",

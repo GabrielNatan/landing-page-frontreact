@@ -4,7 +4,6 @@ export default {
       one:'Início',
       two:'Sobre nós',
       three:'Contato',
-      four:'Outros',
       button:'Fale Conosco'
     },
     hero: {
@@ -84,12 +83,10 @@ export default {
     footer:{
       one:'Nossa empresa de marketing digital garante resultados tangíveis e transparência. Junte-se a nós para elevar sua presença online.',
       two:{
-        title:'',
-        one:''
-      },
-      three:{
-        title:'',
-        one:''
+        title:'Links',
+        linkOne:'Início',
+        linkTwo:'Sobre nós',
+        linkThree:'Contato',
       },
       four:'Conecte-se conosco'
     }

@@ -37,7 +37,7 @@ export const Footer = ()=>{
         
       </form>
 
-      <div className="lg:mt-40 py-6 lg:border-t w-full flex flex-col gap-5 lg:grid lg:grid-cols-4">
+      <div className="lg:mt-40 py-6 lg:border-t w-full flex flex-col gap-5 lg:grid lg:grid-cols-3">
         <div>
           <div>
             <div className="flex items-center">
@@ -49,20 +49,13 @@ export const Footer = ()=>{
           {t('footer.one')}
           </p>
         </div>
-        <ol>
+        <ol >
           <li className="font-bold">{t('footer.two.title')}</li>
           <li>{t('footer.two.linkOne')}</li>
           <li>{t('footer.two.linkTwo')}</li>
           <li>{t('footer.two.linkThree')}</li>
-          <li>{t('footer.two.linkFour')}</li>
         </ol>
-        <ol>
-          <li className="font-bold">{t('footer.three.title')}</li>
-          <li>{t('footer.three.linkOne')}</li>
-          <li>{t('footer.three.linkTwo')}</li>
-          <li>{t('footer.three.linkThree')}</li>
-          <li>{t('footer.three.linkFour')}</li>
-        </ol>
+      
         <div className="flex flex-col gap-3">
           <strong>{t('footer.four')}</strong>
           <div className="flex gap-3">

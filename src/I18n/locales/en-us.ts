@@ -82,16 +82,14 @@ export default {
       }
     },
     footer:{
-      one:'Our digital marketing company guarantees tangible results and transparency. Join us to enhance your online presence.',
+      one:'Our digital marketing company guarantees tangible results and transparency. Join us to elevate your online presence.',
       two:{
-        title:'',
-        one:''
-      },
-      three:{
-        title:'',
-        one:''
+          title:'Links',
+          linkOne:'Home',
+          linkTwo:'About Us',
+          linkThree:'Contact',
       },
       four:'Connect with us'
-    }
+  }
   }
 }

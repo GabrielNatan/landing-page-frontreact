@@ -82,16 +82,14 @@ export default {
       }
     },
     footer:{
-      one:'Nuestra empresa de marketing digital garantiza resultados tangibles y transparencia. Únase a nosotros para mejorar su presencia en línea.',
+      one:'Nuestra empresa de marketing digital garantiza resultados tangibles y transparencia. Únase a nosotros para elevar su presencia en línea.',
       two:{
-        title:'',
-        one:''
-      },
-      three:{
-        title:'',
-        one:''
+          title:'Enlaces',
+          linkOne:'Inicio',
+          linkTwo:'Sobre nosotros',
+          linkThree:'Contacto',
       },
       four:'Conéctese con nosotros'
-    }
+  }
   }
 }
